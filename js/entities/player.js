@@ -35,10 +35,10 @@ function createPlayerFactory(sprite, audio) {
         }
         if (player.traits.get(Go).distance > 0) {
             if (player.vel.x > 0 && player.traits.get(Go).dir < 0 || player.vel.x < 0 && player.traits.get(Go).dir > 0) {
-                if (player.traits.get(Player).canDie == false || player.traits.get(Player).lives==0) {
+                if (player.traits.get(Player).canDie == false || player.traits.get(Player).lives == 0) {
                     return "break-undying"
                 }
-                else {
+                else if( player.traits.get(Player).canDie == true && player.traits.get(Player).lives != 0) {
                     return "break"
                 }
             }
